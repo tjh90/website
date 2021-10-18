@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  margin: 25px 100px 50px 100px;
+
+  --blue: #4080FF;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  margin: 25px 0px 0px 0px;
+}
+
+hr {
+  background-color: #4080FF;
+  border: none;
+  border-radius: 5px;
+  color: var(--blue);
+  height: 5px;
+  margin: 25px 0px;
+}
+
+img {
+  display: block;
+  margin: 0px auto;
+  width: 500px;
+}
+
+div.PageLinkContainer {
+  display: flex;
+  padding: 0px 25px;
+}
+
+div.PageLink {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+div.PageLink * {
+  align-self: center;
+  padding: 10px;
+}
+
+div.PageLink i {
+  color: var(--blue);
+  font-size: 36px;
+}
