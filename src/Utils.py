@@ -1,3 +1,4 @@
+import atexit
 import logging
 import os
 from cryptography.hazmat.primitives.serialization import pkcs12, Encoding, NoEncryption, PrivateFormat, PublicFormat
@@ -27,7 +28,17 @@ def __setupLog():
 
 LOG = __setupLog()
 
-def extractSsl():
+def __cleanUp():
+    ''' Run cleanup after the app is shutdown.'''
+
+    LOG.info('Cleaning up SSL key/cert files')
+    try:
+        os.remove(SSL_KEY_FILE)
+        os.remove(SSL_CERT_FILE)
+    except:
+        LOG.warning('Failed to delete SSL certificate and/or key during cleanup')
+
+def prepareSsl():
     ''' Extract SSL key and certificate from encrypted file. '''
 
     LOG.info('Extracting SSL key/cert files')
@@ -47,15 +58,8 @@ def extractSsl():
     with open(SSL_CERT_FILE, 'wb') as file:
         file.write(cert.public_bytes(Encoding.PEM))
 
-def cleanUp():
-    ''' Run cleanup after the app is shutdown.'''
-
-    LOG.info('Cleaning up SSL key/cert files')
-    try:
-        os.remove(SSL_KEY_FILE)
-        os.remove(SSL_CERT_FILE)
-    except:
-        LOG.warning('Failed to delete SSL certificate and/or key during cleanup')
+    # Register shutdown hook.
+    atexit.register(__cleanUp)
 
 def isMobile(request):
     '''
