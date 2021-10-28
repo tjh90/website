@@ -6,7 +6,7 @@ def isMobile(request):
     '''
 
     agent = request.user_agent.string.lower()
-    for keyword in ['android', 'apple', 'iphone', 'mobile']:
+    for keyword in ['android', 'iphone', 'mobile']:
         if keyword in agent:
             return True
 
