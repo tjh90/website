@@ -1,6 +1,15 @@
+import atexit
 from app import app
 
-# Server config.
+import src.Utils as Utils
+
 if __name__ == '__main__':
-    sslContext = ('certs/index.crt', 'certs/index.key')
-    app.run(host='0.0.0.0', port=5000, debug=False, ssl_context=sslContext)
+    # Extract SSL key/cert from .p12 file.
+    Utils.extractSsl()
+
+    # Set up SSL context and run app.
+    sslContext = (Utils.SSL_CERT_FILE, Utils.SSL_KEY_FILE)
+    app.run(host='0.0.0.0', port=3000, debug=False, ssl_context=sslContext)
+
+    # Remove SSL key/cert files.
+    atexit.register(Utils.cleanUp)
