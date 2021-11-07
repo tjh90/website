@@ -19,6 +19,13 @@ def redirectHttp():
 
 # Routes.
 @app.route('/')
+def root():
+    ''' Redirect to index page. '''
+
+    url = request.url + 'index.html'
+    return redirect(url, code=301)
+
+@app.route('/index.html')
 def index():
     ''' Get index page. '''
 

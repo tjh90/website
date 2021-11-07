@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  margin: 0px;
+
+  --blue: #4080FF;
+  --dark-blue: #204080;
+}
+
+h1 {
+  background-color: var(--blue);
+  color: white;
+  margin: 0px 0px 25px 0px;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+div.content {
+  margin: 25px;
+}

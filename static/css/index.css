@@ -1,0 +1,7 @@
+@import "common.css";
+
+img {
+  display: block;
+  margin: 0px auto;
+  width: 500px;
+}
