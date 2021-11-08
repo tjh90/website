@@ -1,0 +1,99 @@
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 0px;
+
+  --blue-a50: rgba(128, 192, 255, 0.50);
+  --blue: rgba(64, 128, 255, 1.0);
+  --dark-blue: #204080;
+}
+
+div.App {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+img.EightBallIcon {
+  height: 500px;
+  margin: 25px;
+  width: 500px;
+}
+
+@keyframes EightBallIcon-idle {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes EightBallIcon-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(25px);
+  }
+  75% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+div.BlueTriangle {
+  color: white;
+  position: absolute;
+  top: 150px;
+  width: 300px;
+}
+
+div.BlueTriangle img {
+    width: 100%;
+}
+
+@keyframes BlueTriangle-zoom {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+div.BlueTriangle p {
+  margin: auto;
+  position: absolute;
+  right: 40px;
+  top: 50px;
+  width: 220px;
+}
+
+button {
+  background-image: linear-gradient(var(--blue-a50), var(--blue));
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px;
+}
+
+button:hover {
+  box-shadow: 3px 3px 3px var(--dark-blue);
+}
+
+button:active {
+  background-color: var(--blue);
+  background-image: none;
+  box-shadow: 0px 0px 0px;
+}
