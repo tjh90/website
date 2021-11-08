@@ -6,5 +6,13 @@
     {
         "severity":5,
         "msg":"Don't count on it"
+    },
+    {
+        "severity":4,
+        "msg":"Not before hell freezes over"
+    },
+    {
+        "severity":5,
+        "msg":"Prepare to reassess your priorities"
     }
 ]

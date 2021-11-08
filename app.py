@@ -1,15 +1,12 @@
 from flask import Flask, jsonify, redirect, request
 
-from src.eightball.EightBall import EightBall
-from src.FileContentProvider import FileContentProvider
-from src.MobileContentProvider import MobileContentProvider
-from src.Utils import isMobile
+from src.Utils import eightBallFromFile, getStaticPage
 
 # Create server.
 app = Flask(__name__)
 
 # Create 8ball instance.
-eightBall = EightBall.fromFile('./predictions.json')
+eightBallInst = eightBallFromFile('./predictions.json')
 
 @app.before_request
 def redirectHttp():
@@ -31,18 +28,19 @@ def root():
 def index():
     ''' Get index page. '''
 
-    contentProvider = FileContentProvider('static/index.html')
+    return getStaticPage(request, 'static/index.html')
 
-    if isMobile(request):
-        contentProvider = MobileContentProvider(contentProvider)
+@app.route('/8ball.html')
+def eightBall():
+    ''' Serve 8 ball page. '''
 
-    return contentProvider.getContent()
+    return getStaticPage(request, 'static/8ball.html')
 
 @app.route('/8ball/predict')
 def eightBallPredict():
     ''' Get an 8 ball prediction. '''
 
-    response = jsonify(eightBall.predict())
+    response = jsonify(eightBallInst.predict())
     response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response

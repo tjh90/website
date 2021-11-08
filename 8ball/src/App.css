@@ -13,7 +13,6 @@ div.App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 25px;
   text-align: center;
 }
 
@@ -53,7 +52,7 @@ img.EightBallIcon {
 div.BlueTriangle {
   color: white;
   position: absolute;
-  top: 150px;
+  top: 125px;
   width: 300px;
 }
 

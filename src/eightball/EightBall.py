@@ -1,8 +1,4 @@
-import json
-import os
 import random
-
-from .Prediction import Prediction
 
 class EightBall:
     ''' Class to represent an 8-ball. '''
@@ -28,27 +24,3 @@ class EightBall:
         prediction = random.choices(self.__predictions, weights=probabilities)[0]
 
         return {'msg':prediction.getMsg()}
-
-    @staticmethod
-    def fromFile(filename):
-        '''
-        Initialise a new EightBall from a config file.
-
-        @param filename the name of the config file.
-        '''
-
-        if not filename.endswith('json'):
-            raise RuntimeException('Config filename had unrecognised extension')
-        elif not os.path.exists(filename) or not os.path.isfile(filename):
-            raise FileNotFoundError('Config file does not exist')
-
-        with open(filename, 'r') as file:
-            content = file.read()
-            rawJson = json.loads(content)
-
-        id = 1
-        predictions = []
-        for prediction in json.loads(content):
-            predictions.append(Prediction(id, prediction['severity'], prediction['msg']))
-
-        return EightBall(predictions)
