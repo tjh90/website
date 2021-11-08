@@ -16,7 +16,7 @@ interface State {
 
 const idleAnimation: string = "EightBallIcon-idle infinite 5s ease-in-out";
 const shakeAnimation: string = "EightBallIcon-shake 5 0.2s linear";
-const blueTriangleZoom: string = "BlueTriangle-zoom 1 0.5s linear";
+const defaultMsg: string = "Nope";
 
 class App extends React.Component<Props, State> {
 
@@ -27,7 +27,7 @@ class App extends React.Component<Props, State> {
             animation: idleAnimation,
             blueTriangleVisible: false,
             imgSrc: EightBall,
-            msg: "Nope"
+            msg: defaultMsg
         };
     }
 
@@ -50,10 +50,16 @@ class App extends React.Component<Props, State> {
             animation: shakeAnimation,
         });
 
+        fetch("https://localhost:3000/8ball/predict")
+            .then(res => res.json())
+            .then(json => this.setState({msg: json.msg}))
+            .catch(error => this.setState({msg: defaultMsg}));
+
         setTimeout(() => this.setState({
             blueTriangleVisible: true,
             imgSrc: EightBallBase
         }), 1000);
+
     }
 
     /**

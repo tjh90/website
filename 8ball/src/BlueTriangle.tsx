@@ -14,10 +14,6 @@ const blueTriangleZoom: string = "BlueTriangle-zoom 1 0.5s linear";
 
 class BlueTriangle extends React.Component<Props, State> {
 
-    constructor(props: Props) {
-        super(props);
-    }
-
     render() {
         return (
             <div
