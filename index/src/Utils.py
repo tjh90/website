@@ -10,9 +10,9 @@ from .eightball.EightBall import EightBall
 from .eightball.Prediction import Prediction
 
 # Key/cert files.
-SSL_KEY_FILE = './certs/index.key'
-SSL_CERT_FILE = './certs/index.crt'
-SSL_P12_FILE = './certs/index.p12'
+SSL_KEY_FILE = '../certs/index.key'
+SSL_CERT_FILE = '../certs/index.crt'
+SSL_P12_FILE = '../certs/index.p12'
 
 # Set up logging.
 def __setupLog():

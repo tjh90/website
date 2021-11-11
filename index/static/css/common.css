@@ -1,0 +1,62 @@
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  margin: 0px;
+
+  --blue: #4080FF;
+  --dark-blue: #204080;
+}
+
+h1 {
+  background-color: var(--blue);
+  color: white;
+  flex: 0 1 auto;
+  margin: 0px;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+div.container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+div.content {
+  flex: 1 1 auto;
+  padding: 25px;
+}
+
+nav {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  flex: 0 1 auto;
+}
+
+nav * {
+  align-self: center;
+  flex: 1 1 auto;
+  padding: 0px 5px;
+}
+
+nav h3 {
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-shadow: 3px 3px 3px var(--dark-blue);
+}
+
+nav a i {
+  flex: 0 1 auto;
+  font-size: 36px;
+}

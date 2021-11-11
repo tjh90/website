@@ -76,14 +76,18 @@ class App extends React.Component<Props, State> {
     render() {
         return (
             <div className="App">
-              <img
-                  className="EightBallIcon"
-                  src={this.state.imgSrc}
-                  alt="8 ball"
-                  style={{animation: this.state.animation}} />
+              <div className="Container">
+                <img
+                    className="EightBallIcon"
+                    src={this.state.imgSrc}
+                    alt="8 ball"
+                    style={{animation: this.state.animation}} />
+                <button
+                    onClick={this.handleBtnClick}>
+                    {this.state.imgSrc === EightBall ? "Shake!" : "Reset"}
+                </button>
+              </div>
               {this.state.blueTriangleVisible &&  <BlueTriangle msg={this.state.msg}/>}
-              <button
-                  onClick={this.handleBtnClick}>{this.state.imgSrc === EightBall ? "Shake!" : "Reset"}</button>
             </div>
         );
     }

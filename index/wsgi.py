@@ -1,4 +1,4 @@
-from app import app
+from App import app
 
 import src.Utils as Utils
 
