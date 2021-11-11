@@ -1,12 +1,12 @@
 from flask import Flask, jsonify, redirect, request
 
-from src.Utils import eightBallFromFile, getStaticPage
+import src.Utils as Utils
 
 # Create server.
 app = Flask(__name__)
 
 # Create 8ball instance.
-eightBallInst = eightBallFromFile('./predictions.json')
+eightBallInst = Utils.eightBallFromFile('./predictions.json')
 
 @app.before_request
 def redirectHttp():
@@ -28,13 +28,13 @@ def root():
 def index():
     ''' Get index page. '''
 
-    return getStaticPage(request, 'static/index.html')
+    return Utils.getStaticPage(request, 'static/index.html')
 
 @app.route('/8ball.html')
 def eightBall():
     ''' Serve 8 ball page. '''
 
-    return getStaticPage(request, 'static/8ball.html')
+    return Utils.getStaticPage(request, 'static/8ball.html')
 
 @app.route('/8ball/predict')
 def eightBallPredict():
