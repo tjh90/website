@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+
+  index:
+    build:
+      context: .
+      target: website-index
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+
+  8ball:
+    build:
+      context: .
+      target: website-8ball
+    env_file:
+      - .env

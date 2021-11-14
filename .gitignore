@@ -7,3 +7,4 @@ common/dist/
 common/MANIFEST
 
 *.pyc
+.env

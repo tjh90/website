@@ -1,0 +1,56 @@
+# Dockerfile
+
+FROM ubuntu:20.04 as website-common
+
+SHELL ["/bin/bash", "-c"]
+
+ENV USER=website
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+        build-essential \
+        curl \
+        libffi-dev \
+        libssl-dev \
+        python-dev \
+        python3-pip \
+        python3-venv \
+        rustc && \
+    useradd -m -s /bin/bash $USER
+USER $USER
+WORKDIR /home/${USER}
+
+ENV VENV=/home/${USER}/.venv
+ENV PATH=${VENV}/bin:$PATH
+
+# Create virtual env and install common package.
+COPY --chown=$USER ./common/ ./common/
+COPY --chown=$USER ./certs/ ./certs/
+RUN python3 -m venv $VENV && \
+    pip3 install -U pip && \
+    cd common && \
+    python3 setup.py install
+
+CMD ["python3"]
+
+################################################################################
+
+FROM website-common as website-index
+
+COPY --chown=$USER index/ /home/${USER}/index/
+
+WORKDIR /home/${USER}/index
+
+RUN pip3 install -r requirements.txt
+
+CMD ["python3", "wsgi.py"]
+
+FROM website-common as website-8ball
+
+COPY --chown=$USER 8ball/ /home/${USER}/8ball
+
+WORKDIR = /home/${USER}/8ball
+
+#RUN pip3 install -r requirements.txt
+
+CMD ["python3", "wsgi.py"]
