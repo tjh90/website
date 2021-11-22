@@ -7,16 +7,18 @@ SHELL ["/bin/bash", "-c"]
 ENV USER=website
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
         build-essential \
+        cargo \
         curl \
         libffi-dev \
         libssl-dev \
-        python-dev \
+        python3-dev \
         python3-pip \
         python3-venv \
         rustc && \
     useradd -m -s /bin/bash $USER
+
 USER $USER
 WORKDIR /home/${USER}
 
@@ -37,20 +39,30 @@ CMD ["python3"]
 
 FROM website-common as website-index
 
-COPY --chown=$USER index/ /home/${USER}/index/
+COPY --chown=$USER ./index/ ./index
 
+USER $USER
 WORKDIR /home/${USER}/index
 
 RUN pip3 install -r requirements.txt
 
 CMD ["python3", "wsgi.py"]
 
-FROM website-common as website-8ball
+################################################################################
 
-COPY --chown=$USER 8ball/ /home/${USER}/8ball
+FROM website-common as website-eightball
 
-WORKDIR = /home/${USER}/8ball
+USER root
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        npm
 
-#RUN pip3 install -r requirements.txt
+COPY --chown=$USER ./eightball/ ./eightball
+
+USER $USER
+WORKDIR /home/${USER}/eightball
+
+RUN pip3 install -r requirements.txt && \
+    npm install && \
+    npm run build
 
 CMD ["python3", "wsgi.py"]

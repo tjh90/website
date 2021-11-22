@@ -8,4 +8,4 @@ if __name__ == '__main__':
 
     # Set up SSL context and run app.
     sslContext = (SslUtils.SSL_CERT_FILE, SslUtils.SSL_KEY_FILE)
-    app.run(host='0.0.0.0', port=3001, debug=False, ssl_context=sslContext)
+    app.run(host='0.0.0.0', port=3000, debug=False, ssl_context=sslContext)
