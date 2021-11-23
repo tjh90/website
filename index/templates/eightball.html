@@ -3,7 +3,7 @@
   <head>
     <link rel="icon" href="/static/favicon.ico" />
 
-    <link rel="stylesheet" href="/static/css/8ball.css" />
+    <link rel="stylesheet" href="/static/css/eightball.css" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
 
@@ -12,7 +12,12 @@
 
   <body>
     <div class="container">
-      <h1>8-ball</h1>
+      <div class="header">
+        <a href="/index.html">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1>8-ball</h1>
+      </div>
 
       <div class="content">
           <iframe src="{{eightBallServerUrl}}/index.html"></iframe>

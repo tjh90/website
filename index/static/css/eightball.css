@@ -1,0 +1,7 @@
+@import "common.css";
+
+iframe {
+  border: 0px;
+  height: 100%;
+  width: 100%;
+}

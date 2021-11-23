@@ -7,19 +7,40 @@ body {
   --dark-blue: #204080;
 }
 
-h1 {
-  background-color: var(--blue);
-  color: white;
-  flex: 0 1 auto;
-  margin: 0px;
-  padding: 10px 0px;
-  text-align: center;
-}
-
 div.container {
   display: flex;
   flex-flow: column;
   height: 100%;
+}
+
+div.header {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  flex: 0 1 auto;
+  padding: 0px 20px;
+}
+
+div.header a {
+  align-self: center;
+  color: white;
+  flex: 0 1 auto;
+  text-decoration: none;
+}
+
+div.header a:hover {
+  text-shadow: 3px 3px 3px var(--dark-blue);
+}
+
+div.header a i {
+  font-size: 36px;
+}
+
+h1 {
+  flex: 1 1 auto;
+  margin: 0px;
+  padding: 10px 0px;
+  text-align: center;
 }
 
 div.content {
