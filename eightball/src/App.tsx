@@ -50,7 +50,7 @@ class App extends React.Component<Props, State> {
             animation: shakeAnimation,
         });
 
-        fetch("https://localhost:3000/8ball/predict")
+        fetch("/predict")
             .then(res => res.json())
             .then(json => this.setState({msg: json.msg}))
             .catch(error => this.setState({msg: defaultMsg}));

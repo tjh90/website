@@ -37,8 +37,8 @@ def index():
 def eightBall():
     ''' Serve 8 ball page. '''
 
-    eightBallUrl = os.getenv('EIGHTBALL_URL')
-    if eightBallUrl is None:
+    eightBallServerUrl = os.getenv('EIGHTBALL_SERVER_URL')
+    if eightBallServerUrl is None:
         return abort(500)
 
-    return render_template('8ball.html', eightBallUrl=eightBallUrl)
+    return render_template('eightball.html', eightBallServerUrl=eightBallServerUrl)

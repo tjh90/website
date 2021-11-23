@@ -14,5 +14,9 @@
     {
         "severity":5,
         "msg":"Prepare to reassess your priorities"
+    },
+    {
+        "severity":3,
+        "msg":"There is only suffering"
     }
 ]
