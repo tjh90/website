@@ -8,6 +8,10 @@ services:
       target: website-index
     ports:
       - 443:3000
+    volumes:
+      - type: bind
+        source: ./certs
+        target: /home/website/certs
     env_file:
       - .env
     deploy:
@@ -21,6 +25,10 @@ services:
       target: website-eightball
     ports:
       - 3000:3000
+    volumes:
+      - type: bind
+        source: ./certs
+        target: /home/website/certs
     env_file:
       - .env
     deploy:

@@ -4,9 +4,9 @@ import os
 from cryptography.hazmat.primitives.serialization import pkcs12, Encoding, NoEncryption, PrivateFormat, PublicFormat
 
 # Key/cert files.
-SSL_KEY_FILE = '../certs/index.key'
-SSL_CERT_FILE = '../certs/index.crt'
-SSL_P12_FILE = '../certs/index.p12'
+SSL_KEY_FILE = '../certs/cert.key'
+SSL_CERT_FILE = '../certs/cert.crt'
+SSL_P12_FILE = '../certs/cert.p12'
 
 # Set up logging.
 def __setupLog():
