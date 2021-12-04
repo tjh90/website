@@ -1,4 +1,4 @@
-from flask import abort, Flask, redirect, render_template, request
+from flask import abort, Flask, redirect, render_template, request, send_from_directory
 import os
 
 import src.Utils as Utils
@@ -13,6 +13,12 @@ def redirectHttp():
     if not request.is_secure:
         url = request.url.replace('http://', 'https://', 1)
         return redirect(url, code=301)
+
+@app.route('/robots.txt')
+def robots():
+    ''' Get robots.txt info. '''
+
+    return send_from_directory(app.static_folder, 'robots.txt')
 
 # Routes.
 @app.route('/')

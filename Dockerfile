@@ -45,7 +45,7 @@ WORKDIR /home/${USER}/index
 
 RUN pip3 install -r requirements.txt
 
-CMD ["python3", "wsgi.py"]
+CMD ["gunicorn"]
 
 ################################################################################
 
@@ -64,4 +64,4 @@ RUN pip3 install -r requirements.txt && \
     npm install && \
     npm run build
 
-CMD ["python3", "wsgi.py"]
+CMD ["gunicorn"]

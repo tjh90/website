@@ -1,8 +1,6 @@
 import React from 'react';
 import BlueTriangleImg from './images/BlueTriangle.svg';
 
-import './App.css';
-
 interface Props {
     msg: string
 }
