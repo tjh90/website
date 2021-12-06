@@ -9,6 +9,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  REGISTRY: ghcr.io
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,8 +19,16 @@ jobs:
       # Check-out code.
       - uses: actions/checkout@v2
 
-      # Run docker-compose build.
+      - name: Log in to docker registry
+        uses: docker/login-action@v1.10.0
+        with:
+          registry: ${{env.REGISTRY}}
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+
       - name: Run docker-compose build
         run: |
           touch .env
           docker-compose build
+          docker push website_index:latest
+          docker push website_eightball:latest
