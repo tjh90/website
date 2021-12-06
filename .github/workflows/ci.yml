@@ -18,4 +18,6 @@ jobs:
 
       # Run docker-compose build.
       - name: Run docker-compose build
-        run: docker-compose build
+        run: |
+          touch .env
+          docker-compose build
