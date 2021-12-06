@@ -1,43 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="icon" href="/static/favicon.ico" />
+{% extends 'base.html' %}
 
-    <link rel="stylesheet" href="/static/css/eightball.css" />
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
-
-    <title>8-ball</title>
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="header">
-        <a href="/index.html">
-          <i class="fas fa-arrow-left"></i>
-        </a>
-        <h1>8-ball</h1>
-      </div>
-
-      <div class="content">
-          <iframe src="{{eightBallServerUrl}}/index.html"></iframe>
-      </div>
-
-      <nav>
-        <h3>Links:</h3>
-        <a href="https://www.github.com/tjh90" target="_blank">
-          <i class="fab fa-github"></i>
-          <p>GitHub</p>
-        </a>
-        <a href="https://eprints.soton.ac.uk/404274/" target="_blank">
-          <i class="fa fa-book"></i>
-          <p>PhD thesis</p>
-        </a>
-        <a href="https://ieeexplore.ieee.org/document/7029130" target="_blank">
-          <i class="fa fa-file-alt"></i>
-          <p>Paper</p>
-        </a>
-      </nav>
-    </div>
-  </body>
-</html>
+{% block content %}
+  <iframe src="{{eightBallServerUrl}}/index.html"></iframe>
+{% endblock %}

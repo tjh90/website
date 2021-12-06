@@ -48,6 +48,15 @@ div.content {
   padding: 25px;
 }
 
+div.content h3 {
+  margin: 5px 0px;
+  text-color: --var(dark-blue);
+}
+
+div.content p {
+  margin: 5px 10px;
+}
+
 nav {
   background-color: var(--blue);
   color: white;
