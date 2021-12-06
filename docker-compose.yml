@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+
+  index:
+    build:
+      context: .
+      target: website-index
+    ports:
+      - 443:3000
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+
+  eightball:
+    build:
+      context: .
+      target: website-eightball
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          memory: 50M
