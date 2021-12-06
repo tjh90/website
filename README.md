@@ -23,3 +23,17 @@ source ./.venv/bin/activate
 pip install -r requirements.txt
 python ./wsgi.py
 ```
+
+# Running a production instance
+
+To build the docker images, run:
+
+```
+docker-compose build
+```
+
+To deploy, run:
+
+```
+docker-compose up -d
+```
