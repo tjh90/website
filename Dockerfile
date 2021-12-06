@@ -27,6 +27,7 @@ ENV PATH=${VENV}/bin:$PATH
 
 # Create virtual env and install common package.
 COPY --chown=$USER ./common/ ./common/
+COPY --chown=$USER ./certs/ ./certs/
 RUN python3 -m venv $VENV && \
     pip3 install -U pip && \
     cd common && \
