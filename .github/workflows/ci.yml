@@ -1,0 +1,21 @@
+# Build images with docker-compose.
+
+name: CI
+
+# Controls when the workflow will run.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check-out code.
+      - uses: actions/checkout@v2
+
+      # Run docker-compose build.
+      - name: Run docker-compose build
+        run: docker-compose build
