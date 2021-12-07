@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
+{% block css %}
+  <link rel="stylesheet" href="/static/css/eightball.css" />
+{% endblock %}
+
+{% block headerBtn %}
+  <a href="/index.html">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+{% endblock%}
+
 {% block content %}
   <iframe src="{{eightBallServerUrl}}/index.html"></iframe>
 {% endblock %}

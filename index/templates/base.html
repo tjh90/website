@@ -3,7 +3,7 @@
   <head>
     <link rel="icon" href="/static/favicon.ico" />
 
-    <link rel="stylesheet" href="/static/css/index.css" />
+    {% block css %} {% endblock %}
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
 
@@ -13,6 +13,7 @@
   <body>
     <div class="container">
       <div class="header">
+        {% block headerBtn %} {% endblock %}
         <h1>{{title}}</h1>
       </div>
 

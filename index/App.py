@@ -50,4 +50,4 @@ def eightBall():
     if eightBallServerUrl is None:
         return abort(500)
 
-    return render_template('eightball.html', eightBallServerUrl=eightBallServerUrl)
+    return render_template('eightball.html', title='8-ball', eightBallServerUrl=eightBallServerUrl)
