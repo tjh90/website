@@ -1,4 +1,5 @@
 from flask import abort, Flask, redirect, render_template, request, send_from_directory
+from markupsafe import Markup
 import os
 
 import src.Utils as Utils
@@ -34,10 +35,12 @@ def index():
 
     if Utils.isMobile(request):
         title = 'Tim\'s Mobile Page'
+        imgContent = ''
     else:
         title = 'Tim\'s Page'
+        imgContent = Markup('<img src="/static/sisley.jpg" alt="Sisley - Lady\'s Cove (1897)" />')
 
-    return render_template('index.html', title=title)
+    return render_template('index.html', title=title, imgContent=imgContent)
 
 @app.route('/eightball.html')
 def eightBall():
@@ -47,4 +50,4 @@ def eightBall():
     if eightBallServerUrl is None:
         return abort(500)
 
-    return render_template('eightball.html', eightBallServerUrl=eightBallServerUrl)
+    return render_template('eightball.html', title='8-ball', eightBallServerUrl=eightBallServerUrl)
