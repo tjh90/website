@@ -1,18 +1,18 @@
 {
-  "name": "8ball",
+  "name": "apps",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.6.2",
-    "@types/node": "^12.20.36",
-    "@types/react": "^16.14.20",
-    "@types/react-dom": "^16.9.14",
+    "@types/node": "^16.11.12",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
     "@types/react-redux": "^7.1.20",
+    "csstype": "^3.0.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-scripts": "4.0.3",
-    "typescript": "~4.1.5"
+    "react-router-dom": "6.0.2",
+    "react-scripts": "^4.0.3",
+    "typescript": "^4.5.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -50,16 +50,16 @@ CMD ["gunicorn"]
 
 ################################################################################
 
-FROM website-common as website-eightball
+FROM website-common as website-apps
 
 USER root
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         npm
 
-COPY --chown=$USER ./eightball/ ./eightball
+COPY --chown=$USER ./apps/ ./apps
 
 USER $USER
-WORKDIR /home/${USER}/eightball
+WORKDIR /home/${USER}/apps
 
 RUN pip3 install -r requirements.txt && \
     npm install && \

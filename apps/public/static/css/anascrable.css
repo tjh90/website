@@ -1,0 +1,15 @@
+div.scrambleContainer {
+  align-items: center;
+  display: flex;
+  font-family: 'Gloria Hallelujah';
+  flex-flow: column;
+  font-size: 32pt;
+  height: 400px;
+  justify-content: center;
+  position: relative;
+  width: 400px;
+}
+
+div.scrambleContainer p {
+  margin: 0px;
+}

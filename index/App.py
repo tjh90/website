@@ -7,6 +7,9 @@ import src.Utils as Utils
 # Create server.
 app = Flask(__name__)
 
+# Get environment variables.
+appServerUrl = os.getenv('APP_SERVER_URL')
+
 @app.before_request
 def redirectHttp():
     ''' Redirect HTTP requests to HTTPS. '''
@@ -46,8 +49,16 @@ def index():
 def eightBall():
     ''' Serve 8 ball page. '''
 
-    eightBallServerUrl = os.getenv('EIGHTBALL_SERVER_URL')
-    if eightBallServerUrl is None:
+    if appServerUrl is None:
         return abort(500)
 
-    return render_template('eightball.html', title='8-ball', eightBallServerUrl=eightBallServerUrl)
+    return render_template('eightball.html', title='8-ball', appServerUrl=appServerUrl)
+
+@app.route('/anascramble.html')
+def anascramble():
+    ''' Serve anascramble page. '''
+
+    if appServerUrl is None:
+        return abort(500)
+
+    return render_template('anascramble.html', title='Anascramble', appServerUrl=appServerUrl)

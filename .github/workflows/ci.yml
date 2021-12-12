@@ -32,5 +32,5 @@ jobs:
           docker-compose build
           docker tag website_index ghcr.io/tjh90/website_index:latest
           docker push ghcr.io/tjh90/website_index:latest
-          docker tag website_eightball ghcr.io/tjh90/website_eightball:latest
-          docker push ghcr.io/tjh90/website_eightball:latest
+          docker tag website_apps ghcr.io/tjh90/website_apps:latest
+          docker push ghcr.io/tjh90/website_apps:latest
