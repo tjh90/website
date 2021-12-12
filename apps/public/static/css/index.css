@@ -1,0 +1,74 @@
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+  width: 100%;
+
+  --blue-a50: rgba(128, 192, 255, 0.50);
+  --blue: rgba(64, 128, 255, 1.0);
+  --dark-blue: #204080;
+  --grey: #808080;
+}
+
+div.App {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+}
+
+div.Container {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+}
+
+button {
+  background-image: linear-gradient(var(--blue-a50), var(--blue));
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  flex: 0 1 auto;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 10px auto;
+  padding: 10px;
+  z-index: 1;
+}
+
+button:hover {
+  box-shadow: 3px 3px 3px var(--blue);
+}
+
+button:active {
+  background-color: var(--blue);
+  background-image: none;
+  box-shadow: 0px 0px 0px;
+}
+
+button.Disabled, button.Disabled:hover, button.Disabled:active {
+  background-image: none;
+  background-color: var(--grey);
+  box-shadow: none;
+}
+
+form {
+  margin: 10px auto;
+}
+
+input {
+  border: 2px solid var(--grey);
+  border-radius: 5px;
+  font-size: 14pt;
+  margin: auto 10px;
+  outline: none;
+  padding: 5px;
+}
+
+input:focus {
+  border: 2px solid var(--blue);
+  box-shadow: 3px 3px 3px var(--blue);
+}

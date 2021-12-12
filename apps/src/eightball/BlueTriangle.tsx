@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import BlueTriangleImg from './images/BlueTriangle.svg';
 
 interface Props {
@@ -10,9 +10,12 @@ interface State {
 
 const blueTriangleZoom: string = "BlueTriangle-zoom 1 0.5s linear";
 
+/**
+ * Blue triangle component.
+ */
 class BlueTriangle extends React.Component<Props, State> {
 
-    render() {
+    render(): ReactNode {
         return (
             <div
                 className="BlueTriangle"

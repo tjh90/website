@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import BlueTriangle from './BlueTriangle';
 
 import EightBall from './images/EightBall.svg';
@@ -14,12 +14,20 @@ interface State {
     msg: string
 }
 
-const idleAnimation: string = "EightBallIcon-idle infinite 5s ease-in-out";
-const shakeAnimation: string = "EightBallIcon-shake 5 0.2s linear";
-const defaultMsg: string = "Nope";
+const idleAnimation: string = 'EightBallIcon-idle infinite 5s ease-in-out';
+const shakeAnimation: string = 'EightBallIcon-shake 5 0.2s linear';
+const defaultMsg: string = 'Nope';
 
-class App extends React.Component<Props, State> {
+/**
+ * 8-ball app.
+ */
+class EightballApp extends React.Component<Props, State> {
 
+    /**
+     * Constructor.
+     *
+     * @param props properties.
+     */
     constructor(props: Props) {
         super(props);
 
@@ -34,7 +42,7 @@ class App extends React.Component<Props, State> {
     /**
      * Handle a button click.
      */
-    handleBtnClick = () => {
+    handleBtnClick = (): void => {
         if(this.state.imgSrc === EightBall) {
             this.shake();
         } else {
@@ -45,12 +53,12 @@ class App extends React.Component<Props, State> {
     /**
      * Shake the 8 ball.
      */
-    shake = () => {
+    shake = (): void => {
         this.setState({
             animation: shakeAnimation,
         });
 
-        fetch("/predict")
+        fetch('/predict')
             .then(res => res.json())
             .then(json => this.setState({msg: json.msg}))
             .catch(error => this.setState({msg: defaultMsg}));
@@ -65,7 +73,7 @@ class App extends React.Component<Props, State> {
     /**
      * Reset the 8 ball.
      */
-    reset = () => {
+    reset = (): void => {
         this.setState({
             animation: idleAnimation,
             blueTriangleVisible: false,
@@ -73,24 +81,24 @@ class App extends React.Component<Props, State> {
         });
     }
 
-    render() {
+    render(): ReactNode {
         return (
-            <div className="App">
-              <div className="Container">
-                <img
-                    className="EightBallIcon"
-                    src={this.state.imgSrc}
-                    alt="8 ball"
-                    style={{animation: this.state.animation}} />
-                <button
-                    onClick={this.handleBtnClick}>
-                    {this.state.imgSrc === EightBall ? "Shake!" : "Reset"}
-                </button>
-              </div>
-              {this.state.blueTriangleVisible &&  <BlueTriangle msg={this.state.msg}/>}
+            <div className='App'>
+                <div className='Container'>
+                    <img
+                        className='EightBallIcon'
+                        src={this.state.imgSrc}
+                        alt='8 ball'
+                        style={{animation: this.state.animation}} />
+                    <button
+                        onClick={this.handleBtnClick}>
+                        {this.state.imgSrc === EightBall ? 'Shake!' : 'Reset'}
+                    </button>
+                </div>
+                {this.state.blueTriangleVisible &&  <BlueTriangle msg={this.state.msg}/>}
             </div>
         );
     }
 }
 
-export default App;
+export default EightballApp;

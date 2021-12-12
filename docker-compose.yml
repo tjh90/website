@@ -15,10 +15,10 @@ services:
         limits:
           memory: 50M
 
-  eightball:
+  apps:
     build:
       context: .
-      target: website-eightball
+      target: website-apps
     ports:
       - 3000:3000
     env_file:

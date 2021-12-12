@@ -9,16 +9,9 @@ app = Flask(__name__, static_folder='./build/static')
 eightBallInst = EightBall.fromFile('predictions.json')
 
 # Routes.
-@app.route('/')
-def root():
-    ''' Redirect to index page. '''
-
-    url = request.url + 'index.html'
-    return redirect(url, code=301)
-
-@app.route('/index.html')
-def index():
-    ''' Return index page. '''
+@app.route('/<path:url>')
+def index(url):
+    ''' Return apps. '''
 
     with open('./build/index.html', 'r') as file:
         return file.read()

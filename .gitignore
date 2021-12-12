@@ -2,6 +2,7 @@
 **/__pycache__/
 
 certs/
+.vscode/
 
 common/build/
 common/dist/
