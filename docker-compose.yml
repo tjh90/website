@@ -13,7 +13,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 50M
+          memory: 100M
 
   eightball:
     build:
@@ -26,4 +26,4 @@ services:
     deploy:
       resources:
         limits:
-          memory: 50M
+          memory: 100M
