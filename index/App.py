@@ -62,3 +62,9 @@ def anascramble():
         return abort(500)
 
     return render_template('anascramble.html', title='Anascramble', appServerUrl=appServerUrl)
+
+@app.route('/music.html')
+def music():
+    ''' Serve music page. '''
+
+    return render_template('music.html', title='Music')
