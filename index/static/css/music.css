@@ -1,0 +1,12 @@
+@import "common.css";
+
+audio {
+  border-radius: 10px;
+  margin: 0px 20px;
+  width: 100%;
+}
+
+div.AudioContainer {
+  display: flex;
+  justify-content: center;
+}

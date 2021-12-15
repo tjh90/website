@@ -6,9 +6,9 @@ body {
   overflow: hidden;
   width: 100%;
 
-  --blue-a50: rgba(128, 192, 255, 0.50);
-  --blue: rgba(64, 128, 255, 1.0);
-  --dark-blue: #204080;
+  --primary-a50: rgba(128, 192, 255, 0.50);
+  --primary: rgba(64, 128, 255, 1.0);
+  --primary-dark: #204080;
   --grey: #808080;
 }
 
@@ -27,7 +27,7 @@ div.Container {
 }
 
 button {
-  background-image: linear-gradient(var(--blue-a50), var(--blue));
+  background-image: linear-gradient(var(--primary-a50), var(--primary));
   border: 0px;
   border-radius: 10px;
   color: white;
@@ -40,11 +40,11 @@ button {
 }
 
 button:hover {
-  box-shadow: 3px 3px 3px var(--blue);
+  box-shadow: 3px 3px 3px var(--primary);
 }
 
 button:active {
-  background-color: var(--blue);
+  background-color: var(--primary);
   background-image: none;
   box-shadow: 0px 0px 0px;
 }
@@ -69,6 +69,6 @@ input {
 }
 
 input:focus {
-  border: 2px solid var(--blue);
-  box-shadow: 3px 3px 3px var(--blue);
+  border: 2px solid var(--primary);
+  box-shadow: 3px 3px 3px var(--primary);
 }

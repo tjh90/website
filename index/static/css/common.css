@@ -1,10 +1,11 @@
 body {
   font-family: sans-serif;
+  font-size: 16pt;
   height: 100vh;
   margin: 0px;
 
-  --blue: #4080FF;
-  --dark-blue: #204080;
+  --primary: #4080FF;
+  --primary-dark: #204080;
 }
 
 div.container {
@@ -14,7 +15,7 @@ div.container {
 }
 
 div.header {
-  background-color: var(--blue);
+  background-color: var(--primary);
   color: white;
   display: flex;
   flex: 0 1 auto;
@@ -29,7 +30,7 @@ div.header a {
 }
 
 div.header a:hover {
-  text-shadow: 3px 3px 3px var(--dark-blue);
+  text-shadow: 3px 3px 3px var(--primary-dark);
 }
 
 div.header a i {
@@ -49,16 +50,16 @@ div.content {
 }
 
 div.content h3 {
-  margin: 5px 0px;
-  text-color: --var(dark-blue);
+  margin: 20px 0px 5px 0px;
+  color: var(--primary);
 }
 
 div.content p {
-  margin: 5px 10px;
+  margin: 0px 10px;
 }
 
 nav {
-  background-color: var(--blue);
+  background-color: var(--primary);
   color: white;
   display: flex;
   flex: 0 1 auto;
@@ -83,7 +84,7 @@ nav a {
 }
 
 nav a:hover {
-  text-shadow: 3px 3px 3px var(--dark-blue);
+  text-shadow: 3px 3px 3px var(--primary-dark);
 }
 
 nav a i {

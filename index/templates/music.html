@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/music.css" />
+{% endblock %}
+
+{% block headerBtn %}
+  <a href="/index.html">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+{% endblock%}
+
+{% block content %}
+  <h3>Waves</h3>
+  <div class=AudioContainer>
+    <audio controls preload=auto type="audio/wav" src="/static/media/waves.wav"></audio>
+  </div>
+{% endblock %}
