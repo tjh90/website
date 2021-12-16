@@ -72,7 +72,7 @@ class Scramble extends React.Component<Props, State> {
     getStyle = (x:number, y: number): CSS.Properties => {
 
         const style: CSS.Properties = {
-            color: 'var(--dark-blue)',
+            color: 'var(--primary-dark)',
             left: `${x + Scramble.OFFSET_X}px`,
             position: 'absolute',
             top: `${y + Scramble.OFFSET_Y}px`
