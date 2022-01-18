@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  font-size: 16pt;
+  font-size: 14pt;
   height: 100vh;
   margin: 0px;
 
@@ -8,13 +8,13 @@ body {
   --primary-dark: #204080;
 }
 
-div.container {
+div.Container {
   display: flex;
   flex-flow: column;
   height: 100%;
 }
 
-div.header {
+div.Header {
   background-color: var(--primary);
   color: white;
   display: flex;
@@ -22,19 +22,19 @@ div.header {
   padding: 0px 20px;
 }
 
-div.header a {
+div.Header a {
   align-self: center;
   color: white;
   flex: 0 1 auto;
   text-decoration: none;
 }
 
-div.header a:hover {
+div.Header a:hover {
   text-shadow: 3px 3px 3px var(--primary-dark);
 }
 
-div.header a i {
-  font-size: 36px;
+div.Header a i {
+  font-size: 24px;
 }
 
 h1 {
@@ -44,17 +44,17 @@ h1 {
   text-align: center;
 }
 
-div.content {
+div.Content {
   flex: 1 1 auto;
   padding: 25px;
 }
 
-div.content h3 {
+div.Content h3 {
   margin: 20px 0px 5px 0px;
   color: var(--primary);
 }
 
-div.content p {
+div.Content p {
   margin: 0px 10px;
 }
 
