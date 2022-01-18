@@ -7,16 +7,18 @@
 {% block headerBtn %}{% endblock %}
 
 {% block content %}
-  <div class="Image DesktopOnly">
-    {{imgContent}}
+  <div class="Row">
+    <div class="TextContent">
+      <h3>8-ball</h3>
+      <p>Ask the magic <a href="/eightball.html" alt="8-ball">8-ball</a>.</p>
+      <h3>Anascramble</h3>
+      <p>Scamble a word or phrase using the <a href="/anascramble.html" alt="Anascramble">anascramble</a> app.</p>
+      <h3>Music</h3>
+      <p><a href="/music.html">Some music</a></p>
+    </div>
+
+    <div class="Image DesktopOnly">
+      {{imgContent}}
+    </div>
   </div>
-
-  </br>
-
-  <h3>8-ball</h3>
-  <p>Ask the magic <a href="/eightball.html" alt="8-ball">8-ball</a>.</p>
-  <h3>Anascramble</h3>
-  <p>Scamble a word or phrase using the <a href="/anascramble.html" alt="Anascramble">anascramble</a> app.</p>
-  <h3>Music</h3>
-  <p><a href="/music.html">Some music</a></p>
 {% endblock %}

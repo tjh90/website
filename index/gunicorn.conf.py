@@ -3,6 +3,7 @@ import SslUtils
 SslUtils.prepareSsl()
 
 # Gunicorn config
+accesslog = './access.log'
 bind = ['0.0.0.0:3000']
 cert_reqs = True
 certfile = SslUtils.SSL_CERT_FILE

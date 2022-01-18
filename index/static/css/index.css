@@ -1,7 +1,32 @@
 @import "common.css";
 
+div.Row {
+  display: flex;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 4096px) {
+  div.TextContent {
+    width: 60%;
+  }
+
+  div.Image {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1023px) {
+  div.TextContent {
+    width: 100%;
+  }
+
+  div.Image {
+    display: none;
+    width: 0%;
+  }
+}
+
 img {
   display: block;
   margin: 0px auto;
-  width: 500px;
+  width: 100%;
 }
