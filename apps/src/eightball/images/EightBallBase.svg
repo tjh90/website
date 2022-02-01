@@ -7,37 +7,13 @@
    viewBox="0 0 100 100"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="8ball_base.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   inkscapeVersion="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlnsInkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="1.2489759"
-     inkscape:cx="290.2378"
-     inkscape:cy="161.73251"
-     inkscape:window-width="1436"
-     inkscape:window-height="851"
-     inkscape:window-x="0"
-     inkscape:window-y="47"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     width="110mm" />
-  <defs
-     id="defs2" />
+   xmlnsSvg="http://www.w3.org/2000/svg">
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
+     inkscapeLabel="Layer 1"
+     inkscapeGroupmode="layer"
      id="layer1">
     <circle
        style="fill:#000000;fill-rule:evenodd;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"

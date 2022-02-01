@@ -53,8 +53,9 @@ CMD ["gunicorn"]
 FROM website-common as website-apps
 
 USER root
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        npm
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get update && \
+    apt-get install -y nodejs
 
 COPY --chown=$USER ./apps/ ./apps
 
