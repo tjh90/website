@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/apps"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "tjh90"
+
+  - package-ecosystem: "pip"
+    directory: "/index"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "tjh90"
+
+  - package-ecosystem: "npm"
+    directory: "/apps"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "tjh90"
