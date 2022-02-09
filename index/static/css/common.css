@@ -8,6 +8,14 @@ body {
   --primary-dark: #204080;
 }
 
+a {
+  color: var(--primary);
+}
+
+a:visited {
+  color: var(--primary-dark);
+}
+
 div.Container {
   display: flex;
   flex-flow: column;
@@ -85,6 +93,10 @@ nav a {
 
 nav a:hover {
   text-shadow: 3px 3px 3px var(--primary-dark);
+}
+
+nav a:visited {
+  color: white;
 }
 
 nav a i {
