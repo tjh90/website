@@ -6,6 +6,7 @@ updates:
       interval: "monthly"
     assignees:
       - "tjh90"
+    open-pull-requests-limit: 10
 
   - package-ecosystem: "pip"
     directory: "/index"
@@ -13,6 +14,7 @@ updates:
       interval: "monthly"
     assignees:
       - "tjh90"
+    open-pull-requests-limit: 10
 
   - package-ecosystem: "npm"
     directory: "/apps"
@@ -20,3 +22,4 @@ updates:
       interval: "monthly"
     assignees:
       - "tjh90"
+    open-pull-requests-limit: 10
