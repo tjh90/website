@@ -10,8 +10,6 @@ interface Props {
 interface State {
 }
 
-type ParagraphArray = React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>[];
-
 /**
  * Class for displaying scrambled letters.
  */
@@ -25,7 +23,7 @@ class Scramble extends React.Component<Props, State> {
     /**
      * @returns the scrambled letter view.
      */
-    createScramble = (): ParagraphArray => {
+    createScramble = (): JSX.Element[] => {
         // Get the letters from the props.
         const letters: string[] = this.props.word.split('')
             .map((l) => l.toUpperCase()).sort(() => 0.5 - Math.random());
@@ -47,7 +45,7 @@ class Scramble extends React.Component<Props, State> {
                 letter.x = Math.max(-Scramble.LIMIT_X, Math.min(Scramble.LIMIT_X, offset * Math.sin(theta)));
                 letter.y = Math.max(-Scramble.LIMIT_Y, Math.min(Scramble.LIMIT_Y, offset * Math.cos(theta)));
 
-                if(tries % 10 == 0) {
+                if(tries % 10 === 0) {
                     offset += offsetIncr;
                 }
             }
