@@ -1,0 +1,9 @@
+@import "theme-editor.css";
+
+body {
+    font-family: sans-serif;
+}
+
+vaadin-horizontal-layout.link {
+    padding: 0px 20px
+}
