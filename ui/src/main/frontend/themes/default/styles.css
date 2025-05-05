@@ -7,3 +7,13 @@ body {
 vaadin-horizontal-layout.link {
     padding: 0px 20px
 }
+
+div.scrambleContainer {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 32px;
+    position: relative;
+}
+
+div.scrambleContainer > i {
+    position: absolute;
+}

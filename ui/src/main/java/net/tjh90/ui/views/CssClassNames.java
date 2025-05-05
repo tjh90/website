@@ -1,5 +1,6 @@
-package net.tjh90.ui.views.css;
+package net.tjh90.ui.views;
 
+/// Contains CSS class names to be applied in the code.
 public class CssClassNames {
 
     public static final String HEADER = "header";
@@ -9,6 +10,9 @@ public class CssClassNames {
     public static final String GITHUB_ICON = "fa-brands fa-github";
     public static final String PHD_THESIS_ICON = "fa-solid fa-book";
     public static final String PAPER_ICON = "fa-solid fa-file-lines";
+
+    // Anascsramble.
+    public static final String SCRAMBLE_CONTAINER = "scrambleContainer";
 
     private CssClassNames() {
     }

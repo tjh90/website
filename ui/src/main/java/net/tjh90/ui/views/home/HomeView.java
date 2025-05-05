@@ -1,4 +1,4 @@
-package net.tjh90.ui.views;
+package net.tjh90.ui.views.home;
 
 import java.util.List;
 
@@ -15,8 +15,9 @@ import com.vaadin.flow.server.StreamResource;
 
 import net.tjh90.ui.HasTitle;
 import net.tjh90.ui.components.Icons;
-import net.tjh90.ui.views.css.CssClassNames;
+import net.tjh90.ui.views.CssClassNames;
 
+/// Defines the home page view.
 @Route("")
 public class HomeView extends HorizontalLayout implements HasTitle {
 
@@ -33,7 +34,7 @@ public class HomeView extends HorizontalLayout implements HasTitle {
     private static final String PAPER_LINK = "https://ieeexplore.ieee.org/document/7029130";
 
     private static final String IMG = "sisley.jpg";
-    private static final String IMG_ALT_TEXT = "Sisley - Lady\\'s Cove (1897)";
+    private static final String IMG_ALT_TEXT = "Sisley - Lady's Cove (1897)";
 
     public HomeView() {
         setPadding(true);

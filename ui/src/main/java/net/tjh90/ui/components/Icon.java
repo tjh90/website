@@ -4,16 +4,19 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.dom.Element;
 
-/**
- * A Font Awesome icon tag.
- */
+/// HTML element containing a [Font Awesome](https://fontawesome.com/) icon tag.
 @Tag("i")
 class Icon extends Component {
 
     private static final String ATTR_CLASS = "class";
 
+    /// Constructor
+    ///
+    /// @param cssClassName the Font Awesome class name for the icon.
     public Icon(final String cssClassName) {
         Element element = getElement();
-        element.setAttribute(ATTR_CLASS, cssClassName);
+        if (element != null) {
+            element.setAttribute(ATTR_CLASS, cssClassName);
+        }
     }
 }
