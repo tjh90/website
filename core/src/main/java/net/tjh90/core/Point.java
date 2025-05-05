@@ -1,4 +1,4 @@
-package net.tjh90.ui;
+package net.tjh90.core;
 
 /// A point in 2D space.
 public record Point(

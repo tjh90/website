@@ -9,7 +9,9 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 
-import net.tjh90.ui.Point;
+import net.tjh90.core.Point;
+import net.tjh90.core.anascramble.CharacterData;
+import net.tjh90.core.anascramble.CharacterScrambler;
 import net.tjh90.ui.components.ScrambledCharacter;
 
 /// Defines UI logic for the [AnascrambleView]. Uses [AnascrambleModel] as the data model.

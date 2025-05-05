@@ -1,4 +1,4 @@
-package net.tjh90.ui.views.anascramble;
+package net.tjh90.core.anascramble;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,17 +8,17 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import net.tjh90.ui.Point;
+import net.tjh90.core.Point;
 
-public class LetterScramblerTest {
+public class CharacterScramblerTest {
 
     private static final String TEST_LETTERS = "TestLetters";
 
     /// Test that the letters returned from the scrambler are the same letters as those that appear in the test string.
     @Test
     public void letterScramblerTest() {
-        CharacterScrambler letterScrambler = new CharacterScrambler();
-        List<CharacterData> scrambledLetters = letterScrambler.scramble(TEST_LETTERS);
+        CharacterScrambler characterScrambler = new CharacterScrambler();
+        List<CharacterData> scrambledLetters = characterScrambler.scramble(TEST_LETTERS);
 
         assertEquals(TEST_LETTERS.length(), scrambledLetters.size());
 

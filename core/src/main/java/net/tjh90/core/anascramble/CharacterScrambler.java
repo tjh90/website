@@ -1,10 +1,10 @@
-package net.tjh90.ui.views.anascramble;
+package net.tjh90.core.anascramble;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import net.tjh90.ui.Point;
+import net.tjh90.core.Point;
 
 /// Handles random scrambling of constituent characters in a [String].
 ///
