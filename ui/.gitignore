@@ -1,11 +1,2 @@
-node_modules/
 src/main/bundles/
 src/main/frontend/generated/
-
-*.js
-*.ts
-
-package.json
-package-lock.json
-tsconfig.json
-src/main/frontend/index.html
