@@ -11,8 +11,9 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 
+/// Main application class.
 @SpringBootApplication
-@Theme("default")
+@Theme(value = "default")
 @CssImport("fontawesome/css/all.css")
 @StyleSheet("https://fonts.googleapis.com/css?family=Gloria%20Hallelujah")
 public class Application implements AppShellConfigurator {
@@ -25,5 +26,4 @@ public class Application implements AppShellConfigurator {
     public Clock clock() {
         return Clock.systemDefaultZone();
     }
-
 }

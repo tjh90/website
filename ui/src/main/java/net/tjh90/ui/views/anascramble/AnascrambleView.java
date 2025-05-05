@@ -5,6 +5,7 @@ import java.util.List;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -49,23 +50,14 @@ public class AnascrambleView extends VerticalLayout implements HasTitle {
         }
         add(scrambleContainer);
 
-        // Add entry field and button.
+        // Add entry field.
         add(lettersFld);
+
+        // Add scramble button.
+        scrambleBtn.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         add(scrambleBtn);
 
         viewModel = new AnascrambleViewModel(this, new AnascrambleModel());
-    }
-
-    public TextField getLettersFld() {
-        return lettersFld;
-    }
-
-    public Button getScrambleBtn() {
-        return scrambleBtn;
-    }
-
-    public float getScrambleContainerSize() {
-        return SCRAMBLE_CONTAINER_SIZE;
     }
 
     @Override
@@ -76,5 +68,17 @@ public class AnascrambleView extends VerticalLayout implements HasTitle {
     public void setScrambledLetters(final List<Component> scrambledLetters) {
         scrambleContainer.removeAll();
         scrambleContainer.add(scrambledLetters);
+    }
+
+    TextField getLettersFld() {
+        return lettersFld;
+    }
+
+    Button getScrambleBtn() {
+        return scrambleBtn;
+    }
+
+    float getScrambleContainerSize() {
+        return SCRAMBLE_CONTAINER_SIZE;
     }
 }

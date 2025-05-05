@@ -2,6 +2,21 @@
 
 body {
     font-family: sans-serif;
+
+    --lumo-primary-color: rgba(64, 128, 255, 1.0);
+    --lumo-primary-color-dark: rgba(20, 40, 80, 1.0);
+}
+
+body[theme~="dark"] {
+    --lumo-primary-color-dark: rgba(192, 224, 255, 1.0);
+}
+
+vaadin-app-layout::part(navbar) {
+    background-color: var(--lumo-primary-color);
+}
+
+vaadin-horizontal-layout.header h1,vaadin-drawer-toggle {
+    color: white;
 }
 
 vaadin-horizontal-layout.link {
@@ -15,5 +30,6 @@ div.scrambleContainer {
 }
 
 div.scrambleContainer > i {
+    color: var(--lumo-primary-color-dark);
     position: absolute;
 }

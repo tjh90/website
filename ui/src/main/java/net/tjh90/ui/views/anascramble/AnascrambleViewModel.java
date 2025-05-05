@@ -24,7 +24,7 @@ public class AnascrambleViewModel {
     ///
     /// @param view  the [AnascrambleView] instance to bind to.
     /// @param model the data model instance.
-    public AnascrambleViewModel(AnascrambleView view, AnascrambleModel model) {
+    public AnascrambleViewModel(final AnascrambleView view, final AnascrambleModel model) {
         this.view = view;
         this.model = model;
 
@@ -35,7 +35,7 @@ public class AnascrambleViewModel {
             scrambleFld.setAllowedCharPattern(ALPHANUMERIC_PATTERN);
 
             scrambleFld.setValueChangeMode(ValueChangeMode.EAGER);
-            scrambleFld.addValueChangeListener(e -> onValueChangedLettersFld(e));
+            scrambleFld.addValueChangeListener(this::onValueChangedLettersFld);
         }
 
         Button scrambleBtn = view.getScrambleBtn();
