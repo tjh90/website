@@ -9,6 +9,7 @@ target/
 *.tsx
 
 .classpath
+.env
 .project
 index.html
 layouts.json

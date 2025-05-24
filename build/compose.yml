@@ -1,0 +1,28 @@
+services:
+  website-build-jre:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: website-build-jre
+      args:
+        JDK_VERSION:
+    volumes:
+      - type: bind
+        source: ./target/
+        target: /tmp
+
+  website-run:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: website-run
+    depends_on:
+      website-build-jre:
+        condition: service_completed_successfully
+    env_file: .env
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: ./target/
+        target: /opt
