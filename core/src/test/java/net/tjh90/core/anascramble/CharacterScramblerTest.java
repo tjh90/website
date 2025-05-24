@@ -8,7 +8,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import net.tjh90.core.Point;
+import net.tjh90.website.core.Point;
+import net.tjh90.website.core.anascramble.CharacterData;
+import net.tjh90.website.core.anascramble.CharacterScrambler;
 
 public class CharacterScramblerTest {
 

@@ -1,4 +1,4 @@
-package net.tjh90.ui.views.home;
+package net.tjh90.website.ui.views.home;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamResource;
 
-import net.tjh90.ui.HasTitle;
-import net.tjh90.ui.components.Icons;
-import net.tjh90.ui.views.CssClassNames;
+import net.tjh90.website.ui.HasTitle;
+import net.tjh90.website.ui.components.Icons;
+import net.tjh90.website.ui.views.CssClassNames;
 
 /// Defines the home page view.
 @Route("")

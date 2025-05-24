@@ -1,4 +1,4 @@
-package net.tjh90.ui;
+package net.tjh90.website.ui;
 
 import java.time.Clock;
 
@@ -12,7 +12,7 @@ import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.AppShellSettings;
 import com.vaadin.flow.theme.Theme;
 
-import net.tjh90.ui.views.home.HomeView;
+import net.tjh90.website.ui.views.home.HomeView;
 
 /// Main application class.
 @SpringBootApplication

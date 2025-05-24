@@ -1,4 +1,4 @@
-package net.tjh90.ui.components;
+package net.tjh90.website.ui.components;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
@@ -6,7 +6,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.dom.Style.Position;
 
-import net.tjh90.core.Point;
+import net.tjh90.website.core.Point;
 
 /// HTML element for a single scrambled character.
 @Tag(value = "i")

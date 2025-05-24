@@ -1,4 +1,4 @@
-package net.tjh90.ui.components;
+package net.tjh90.website.ui.components;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;

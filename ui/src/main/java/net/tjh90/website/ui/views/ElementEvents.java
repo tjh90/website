@@ -1,4 +1,4 @@
-package net.tjh90.ui.views;
+package net.tjh90.website.ui.views;
 
 public class ElementEvents {
 

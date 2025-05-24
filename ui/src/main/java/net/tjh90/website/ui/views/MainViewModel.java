@@ -1,4 +1,4 @@
-package net.tjh90.ui.views;
+package net.tjh90.website.ui.views;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.UI;
@@ -9,8 +9,8 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.dom.ThemeList;
 import com.vaadin.flow.theme.lumo.Lumo;
 
-import net.tjh90.ui.HasTitle;
-import net.tjh90.ui.views.home.HomeView;
+import net.tjh90.website.ui.HasTitle;
+import net.tjh90.website.ui.views.home.HomeView;
 
 /// Defines UI logic for the [MainView].
 public class MainViewModel {

@@ -1,4 +1,4 @@
-package net.tjh90.ui;
+package net.tjh90.website.ui;
 
 @FunctionalInterface
 public interface HasTitle {

@@ -7,19 +7,11 @@
     <name>Website</name>
 
     <parent>
-        <groupId>net.tjh90</groupId>
+        <groupId>net.tjh90.website</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom-parent.xml</relativePath>
     </parent>
-
-    <dependencies>
-        <dependency>
-            <groupId>net.tjh90</groupId>
-            <artifactId>ui</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -55,6 +47,15 @@
 
         <profile>
             <id>prod</id>
+
+            <dependencies>
+                <dependency>
+                    <groupId>net.tjh90.website</groupId>
+                    <artifactId>ui</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
+            </dependencies>
+
             <build>
                 <plugins>
                     <plugin>
@@ -85,13 +86,14 @@
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <configuration>
                             <finalName>website-${project.version}</finalName>
-                            <mainClass>net.tjh90.ui.Application</mainClass>
+                            <mainClass>net.tjh90.website.ui.Application</mainClass>
                         </configuration>
                         <executions>
                             <execution>
                                 <goals>
                                     <goal>repackage</goal>
                                 </goals>
+                                <phase>package</phase>
                             </execution>
                         </executions>
                     </plugin>

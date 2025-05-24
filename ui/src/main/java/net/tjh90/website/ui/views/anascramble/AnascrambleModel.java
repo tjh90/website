@@ -1,4 +1,4 @@
-package net.tjh90.ui.views.anascramble;
+package net.tjh90.website.ui.views.anascramble;
 
 /// The backing data model for the [AnascrambleView].
 public class AnascrambleModel {

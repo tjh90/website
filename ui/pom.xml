@@ -7,7 +7,7 @@
     <name>UI</name>
 
     <parent>
-        <groupId>net.tjh90</groupId>
+        <groupId>net.tjh90.website</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom-parent.xml</relativePath>
@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>net.tjh90</groupId>
+            <groupId>net.tjh90.website</groupId>
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>

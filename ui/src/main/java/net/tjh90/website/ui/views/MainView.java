@@ -1,4 +1,4 @@
-package net.tjh90.ui.views;
+package net.tjh90.website.ui.views;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -10,8 +10,8 @@ import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.Layout;
 
-import net.tjh90.ui.views.anascramble.AnascrambleView;
-import net.tjh90.ui.views.home.HomeView;
+import net.tjh90.website.ui.views.anascramble.AnascrambleView;
+import net.tjh90.website.ui.views.home.HomeView;
 
 /// Defines the main application view elements.
 @Layout

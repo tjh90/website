@@ -1,4 +1,4 @@
-package net.tjh90.ui.views.anascramble;
+package net.tjh90.website.ui.views.anascramble;
 
 import java.time.Instant;
 import java.util.List;
@@ -9,10 +9,10 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 
-import net.tjh90.core.Point;
-import net.tjh90.core.anascramble.CharacterData;
-import net.tjh90.core.anascramble.CharacterScrambler;
-import net.tjh90.ui.components.ScrambledCharacter;
+import net.tjh90.website.core.Point;
+import net.tjh90.website.core.anascramble.CharacterData;
+import net.tjh90.website.core.anascramble.CharacterScrambler;
+import net.tjh90.website.ui.components.ScrambledCharacter;
 
 /// Defines UI logic for the [AnascrambleView]. Uses [AnascrambleModel] as the data model.
 public class AnascrambleViewModel {

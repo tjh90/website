@@ -1,6 +1,6 @@
-package net.tjh90.ui.components;
+package net.tjh90.website.ui.components;
 
-import net.tjh90.ui.views.CssClassNames;
+import net.tjh90.website.ui.views.CssClassNames;
 
 public enum Icons {
 

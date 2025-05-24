@@ -1,4 +1,4 @@
-package net.tjh90.ui.views.anascramble;
+package net.tjh90.website.ui.views.anascramble;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.dom.Style.Position;
 import com.vaadin.flow.router.Route;
 
-import net.tjh90.ui.HasTitle;
-import net.tjh90.ui.views.CssClassNames;
+import net.tjh90.website.ui.HasTitle;
+import net.tjh90.website.ui.views.CssClassNames;
 
 /// Defines the Anascramble view elements. UI logic is handled in [AnascrambleViewModel].
 @Route("anascramble")
@@ -33,6 +33,8 @@ public class AnascrambleView extends VerticalLayout implements HasTitle {
     private final Button scrambleBtn = new Button(SCRAMBLE_BTN_TEXT);
     private final Div scrambleContainer = new Div();
 
+    // View model instance lifetime must match the view, but we don't need to access it after creation.
+    @SuppressWarnings("unused")
     private final AnascrambleViewModel viewModel;
 
     public AnascrambleView() {
