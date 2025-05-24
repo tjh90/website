@@ -19,7 +19,7 @@
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>
-    
+
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
@@ -53,29 +53,10 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>net.tjh90.ui.Application</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <profiles>
-        <profile>
-            <id>default</id>
-        </profile>
-
         <profile>
             <id>prod</id>
             <dependencies>
