@@ -1,5 +1,7 @@
 # Website
 
+[![CI build](https://github.com/tjh90/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/tjh90/website/actions/workflows/build.yml)
+
 Simple website
 
 ## Building
