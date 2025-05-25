@@ -1,0 +1,52 @@
+name: CI build
+
+env:
+  java.version: 24
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 24
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.java.version }}
+          cache: maven
+
+      - name: Run Maven build
+        run: mvn clean install -P prod -ntp
+
+  build-website-build-jre:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker images
+        uses: docker/build-push-action@v6
+        with:
+        build-args:
+          JDK_VERSION: ${{ env.java.version}}
+        context: ./build
+        target: website-build-jre
+        push: false
+
+  build-website-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker images
+        uses: docker/build-push-action@v6
+        with:
+        build-args:
+          JDK_VERSION: ${{ env.java.version}}
+        context: ./build
+        target: website-run
+        push: false
