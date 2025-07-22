@@ -41,7 +41,7 @@ RUN \
     chmod +x $CMD_PATH
 
 USER $USER
-WORKDIR /tmp
+WORKDIR /opt
 
 # Create a JRE for running the website .jar.
 CMD [ "CreateJre.sh" ]
@@ -50,9 +50,10 @@ CMD [ "CreateJre.sh" ]
 
 FROM website-base AS website-run
 
+COPY --chown=$USER ./target/website-*.jar /home/$USER/website.jar
+
 # Set up user.
 USER $USER
-WORKDIR /opt
+WORKDIR /home/$USER
 
-ENV WEBSITE_JAR=""
-CMD [ "bash", "-c", "./jre/bin/java -jar $WEBSITE_JAR" ]
+CMD [ "bash", "-c", "/opt/jre/bin/java -jar website.jar" ]
