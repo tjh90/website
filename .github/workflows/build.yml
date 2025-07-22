@@ -31,26 +31,17 @@ jobs:
           path: '**/TEST-*.xml'
           reporter: java-junit
 
-  build-website-build-jre:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build Docker images
-        uses: docker/build-push-action@v6
-        with:
-          build-args: |
-            'JDK_VERSION=24'
-          context: ./build
-          target: website-build-jre
-          push: false
-
   build-website-run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build Docker images
+      - name: Create dummy website .jar
+        run: |
+            mkdir -p ./build/target
+            touch ./build/target/website.jar
+
+      - name: Build Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./build
