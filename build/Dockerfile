@@ -6,53 +6,36 @@ SHELL [ "/bin/bash", "-c" ]
 
 # Install updates and add user for running the application.
 ENV USER=website
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    useradd -m -s /bin/bash $USER
+RUN apt update && \
+    apt upgrade -y && \
+    useradd -m -s /bin/bash ${USER}
 
 ########################################################################################################################
 
-FROM website-base AS website-build-jre
-
-ARG JDK_VERSION="8"
-
-ARG CMD_PATH="/usr/local/bin/CreateJre.sh"
-COPY CreateJre.sh $CMD_PATH
+FROM website-base AS website-run
 
 # Install required packages and the JDK.
 RUN \
     # Add the Adoptium repository to the apt sources and update.
-    apt-get install -y apt-transport-https gpg wget && \
+    apt install -y apt-transport-https gpg wget && \
     wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | \
         gpg --dearmor | \
         tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null && \
     VERSION_CODENAME=$(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) && \
     echo "deb https://packages.adoptium.net/artifactory/deb $VERSION_CODENAME main" | \
         tee /etc/apt/sources.list.d/adoptium.list > /dev/null && \
-    apt-get update && \
+    apt update && \
 \
-    # Install the JDK.
-    apt-get install --no-install-recommends -y fakeroot temurin-${JDK_VERSION}-jdk && \
+    # Install the JRE.
+    apt install --no-install-recommends -y fakeroot temurin-24-jre && \
 \
     # Clean up the apt cache.
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-\
-    chmod +x $CMD_PATH
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
 
 USER $USER
 WORKDIR /tmp
 
-# Create a JRE for running the website .jar.
-CMD [ "CreateJre.sh" ]
+COPY --chown=$USER target/website*.jar website.jar
 
-########################################################################################################################
-
-FROM website-base AS website-run
-
-# Set up user.
-USER $USER
-WORKDIR /opt
-
-ENV WEBSITE_JAR=""
-CMD [ "bash", "-c", "./jre/bin/java -jar $WEBSITE_JAR" ]
+CMD [ "java", "-jar", "website.jar" ]
