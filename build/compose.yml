@@ -1,5 +1,5 @@
 services:
-  website-run:
+  website:
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,10 +7,15 @@ services:
     ports:
       - 8080:8080
 
-  website-nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile-nginx
+  nginx:
+    image: nginx
     ports:
       - 443:443
       - 80:80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+      - type: bind
+        source: ./certs
+        target: /opt/certs
