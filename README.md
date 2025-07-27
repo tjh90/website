@@ -9,9 +9,18 @@ Simple website
 Run the following commands from the repository root:
 
 ``` shell
-# Compile the application.
+# Compile web server code.
 mvn clean install -P prod
 
-# Build docker images and run the application in a container.
-docker-compose.exe --file .\build\compose.yml up --build
+# Build docker images.
+sudo docker-compose --file ./build/compose.yml build
+```
+
+## Deploying with Docker
+
+1. Copy your SSL certificate and key file to `./build/certs`
+2. Run the following command:
+
+```shell
+sudo docker-compose --file ./build/compose.yml up
 ```
