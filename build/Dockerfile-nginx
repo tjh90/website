@@ -1,0 +1,5 @@
+# Dockerfile for nginx reverse proxy.
+
+FROM nginx:1.29.0 AS website-nginx
+
+COPY nginx.conf /etc/nginx/nginx.conf
