@@ -18,7 +18,6 @@ import net.tjh90.website.ui.views.home.HomeView;
 @SpringBootApplication
 @Theme(value = "default")
 @CssImport("./fontawesome/css/all.css")
-@StyleSheet("https://fonts.googleapis.com/css?family=Gloria%20Hallelujah")
 public class Application implements AppShellConfigurator {
 
     private static final String FAVICON = "favicon.ico";
