@@ -6,12 +6,14 @@ import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.Layout;
 
 import net.tjh90.website.ui.views.anascramble.AnascrambleView;
 import net.tjh90.website.ui.views.home.HomeView;
+import net.tjh90.website.ui.views.privacy.PrivacyView;
 
 /// Defines the main application view elements.
 @Layout
@@ -44,16 +46,33 @@ public class MainView extends AppLayout {
         return layout;
     }
 
-    private SideNav createSideNav() {
-        SideNav nav = new SideNav();
+    private Component createSideNav() {
+        // Main navigation items.
+        SideNav mainNav = new SideNav();
+        mainNav.setWidthFull();
 
-        nav.addItem(new SideNavItem(HomeView.NAV_LABEL, HomeView.class));
-        nav.addItem(new SideNavItem(AnascrambleView.NAV_LABEL, AnascrambleView.class));
+        mainNav.addItem(new SideNavItem(HomeView.NAV_LABEL, HomeView.class));
+        mainNav.addItem(new SideNavItem(AnascrambleView.NAV_LABEL, AnascrambleView.class));
 
         darkModeItem.setSuffixComponent(darkModeCheckbox);
-        nav.addItem(darkModeItem);
+        mainNav.addItem(darkModeItem);
 
-        return nav;
+        // Bottom navigation items.
+        SideNav bottomNav = new SideNav();
+        bottomNav.setWidthFull();
+        bottomNav.addItem(new SideNavItem(PrivacyView.NAV_LABEL, PrivacyView.class));
+
+        // Layout for side navigation.
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSizeFull();
+        layout.setPadding(false);
+        layout.setSpacing(false);
+
+        layout.add(mainNav);
+        layout.expand(mainNav);
+        layout.add(bottomNav);
+
+        return layout;
     }
 
     @Override
