@@ -11,7 +11,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
 
 import net.tjh90.website.ui.HasTitle;
 import net.tjh90.website.ui.components.Icons;
@@ -54,8 +54,8 @@ public class HomeView extends HorizontalLayout implements HasTitle {
     }
 
     private static Component createImageSection() {
-        StreamResource imgRes = new StreamResource(IMG, () -> HomeView.class.getResourceAsStream(IMG));
-        return new Image(imgRes, IMG_ALT_TEXT);
+        DownloadHandler imgDownloadHandler = DownloadHandler.forClassResource(HomeView.class, IMG);
+        return new Image(imgDownloadHandler, IMG_ALT_TEXT);
     }
 
     private static List<Component> createLinks() {
