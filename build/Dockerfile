@@ -1,21 +1,13 @@
 # Dockerfile for creating a package from the website .jar.
 
-FROM ubuntu:24.04 AS website-base
+FROM ubuntu:24.04 AS website-run
 
 SHELL [ "/bin/bash", "-c" ]
 
-# Install updates and add user for running the application.
 ENV USER=website
 RUN apt update && \
     apt upgrade -y && \
-    useradd -m -s /bin/bash ${USER}
-
-########################################################################################################################
-
-FROM website-base AS website-run
-
-# Install required packages and the JDK.
-RUN \
+\
     # Add the Adoptium repository to the apt sources and update.
     apt install -y apt-transport-https gpg wget && \
     wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | \
@@ -31,7 +23,10 @@ RUN \
 \
     # Clean up the apt cache.
     apt clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+\
+    # Add user for running the application.
+    useradd -m -s /bin/bash ${USER}
 
 USER $USER
 WORKDIR /tmp
