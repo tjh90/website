@@ -4,6 +4,12 @@
 
 Simple website
 
+## Prerequisites
+
+- Java 24
+- Maven
+- Docker & Docker Compose
+
 ## Building
 
 Run the following commands from the repository root:

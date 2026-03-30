@@ -32,9 +32,4 @@ public class Application implements AppShellConfigurator {
         settings.setPageTitle(HomeView.TITLE);
         settings.addFavIcon(FAVICON, FAVICON, FAVICON_SIZE);
     }
-
-    @Bean
-    public Clock clock() {
-        return Clock.systemDefaultZone();
-    }
 }
