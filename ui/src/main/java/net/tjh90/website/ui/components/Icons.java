@@ -22,7 +22,7 @@ public enum Icons {
         this.cssClassName = cssClassName;
     }
 
-    /// @returns a new [Icon] using the supplied `cssClassName`.
+    /// @return a new [Icon] using the supplied `cssClassName`.
     public Icon create() {
         return new Icon(cssClassName);
     }
